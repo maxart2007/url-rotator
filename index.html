@@ -1,0 +1,67 @@
+{% extends Layout.html %}
+
+{% block title %}Testing session{% endblock %}
+
+{% block content %}
+<h1>Thanks for participating</h1>
+<div class="notification is-warning is-light"><strong>Please remember:</strong> we're not testing you, we're testing user experience of the website. There are no right or wrong answers.</div>
+
+<h3>Instructions:</h3>
+
+<ol>
+    <li>
+        Press "Get started" button below to get to the website
+    </li>
+    <li>
+        <div class="mb-2">Login to the website with the following login and password:</div>
+        <div class="notification block">
+    
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">Login:</label>
+                </div>
+                
+                <div class="field-body">
+                    <div class="field is-horizontal has-addons">
+                        <div class="control">
+                            <input class="input" type="text" readonly value="{{ $login }}" id="login">
+                        </div>
+                        <div class="control">
+                            <button class="button is-info copy-to-clipboard" data-clipboard-target="#login">
+                                Copy
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">Password:</label>
+                </div>
+                
+                <div class="field-body">
+                    <div class="field is-horizontal has-addons">
+                        <div class="control">
+                            <input class="input" type="text" readonly value="{{ $password }}" id="password">
+                        </div>
+                        <div class="control">
+                            <button class="button is-info copy-to-clipboard" data-clipboard-target="#password">
+                                Copy
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </li>
+    <li>Follow the test instructions</li>
+</ol>
+
+
+<div class="block">
+    <a href="{{ $url }}" class="button is-large is-primary" target="_blank">Get started</a> <span class="is-size-7">Will open in a new tab so you can refer to login and password again.</span>
+</div>
+
+{% endblock %}
